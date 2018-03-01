@@ -11,7 +11,7 @@ class ExpectedExceptionTest {
     @Test
     void someMethodThrowsExceptionTest() {
         assertThrows(UnsupportedOperationException.class, () -> {
-            CustomerService.someMethod(new Customer("name"));
+            CustomerService.someMethod(new Customer("name", " asd"));
         });
     }
 

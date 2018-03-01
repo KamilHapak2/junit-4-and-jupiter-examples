@@ -16,19 +16,16 @@ public class ExpectedExceptionTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void expectedTest() throws Exception {
-        // given
         Customer customer = new Customer("name");
 
-        // when
         CustomerService.someMethod(customer);
 
-        // then
         assertTrue(true);
     }
 
     @Test
     public void expectedExceptionRuleTest() throws Exception {
-        Customer customer = new Customer("name");
+        Customer customer = new Customer("name", "asd");
 
         thrown.expect(UnsupportedOperationException.class);
 

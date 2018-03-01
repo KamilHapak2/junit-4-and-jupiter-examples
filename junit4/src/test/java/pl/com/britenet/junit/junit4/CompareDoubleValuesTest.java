@@ -8,8 +8,8 @@ public class CompareDoubleValuesTest {
 
     @Test
     public void comparisonDelta() throws Exception {
-        double b = 1.91;
+        double b = 1.92;
         double a = 1.9;
-        assertEquals(a, b, 0.1);
+        assertEquals(a, b, 0.01);
     }
 }

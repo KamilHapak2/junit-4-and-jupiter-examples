@@ -32,6 +32,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19</version>
                 <configuration>
+                    <forkCount>2</forkCount>
+                    <reuseForks>true</reuseForks>
                     <systemPropertyVariables>
                         <specificTestsEnabled>${enableSpecificTests}</specificTestsEnabled>
                     </systemPropertyVariables>
@@ -48,6 +50,5 @@
         </profile>
 
     </profiles>
-
 
 </project>
