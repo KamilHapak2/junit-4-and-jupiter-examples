@@ -22,7 +22,6 @@
             <artifactId>junit</artifactId>
             <scope>compile</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -43,12 +42,11 @@
     </build>
     <profiles>
         <profile>
-            <id>h2TestsEnabled</id>
+            <id>h2-tests-enabled</id>
             <properties>
                 <h2TestsEnabled>true</h2TestsEnabled>
             </properties>
         </profile>
-
     </profiles>
 
 </project>
