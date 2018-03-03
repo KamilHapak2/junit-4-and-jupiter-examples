@@ -10,6 +10,6 @@ public class CompareDoubleValuesTest {
     public void comparisonDelta() throws Exception {
         double b = 1.92;
         double a = 1.9;
-        assertEquals(a, b, 0.01);
+        assertEquals(a, b, 0.1);
     }
 }

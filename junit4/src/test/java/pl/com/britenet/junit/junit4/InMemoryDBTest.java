@@ -1,18 +1,21 @@
 package pl.com.britenet.junit.junit4;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
-import pl.com.britenet.junit.testbase.StudentRepository;
+import pl.com.britenet.junit.testbase.ConfigurationService;
 import pl.com.britenet.junit.testbase.JpaConfig;
 import pl.com.britenet.junit.testbase.Student;
+import pl.com.britenet.junit.testbase.StudentRepository;
 
 import javax.annotation.Resource;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assume.assumeTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
@@ -23,6 +26,11 @@ public class InMemoryDBTest {
 
     @Resource
     private StudentRepository studentRepository;
+
+    @Before
+    public void checkH2TestsSwitch() {
+        assumeTrue(ConfigurationService.isH2TestsEnabled());
+    }
 
     @Test
     public void givenStudent_whenSave_thenGetOk() {

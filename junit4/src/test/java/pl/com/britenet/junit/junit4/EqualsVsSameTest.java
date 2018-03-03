@@ -1,10 +1,13 @@
 package pl.com.britenet.junit.junit4;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import pl.com.britenet.junit.testbase.Customer;
+import pl.com.britenet.junit.testbase.Student;
 
 import static org.junit.Assert.*;
+import static pl.com.britenet.junit.junit4.CustomAssertions.assertDifferent;
 
 public class EqualsVsSameTest {
 
@@ -13,11 +16,12 @@ public class EqualsVsSameTest {
 
     @Before
     public void setUp() throws Exception {
-        customer1 = new Customer("qwe", "qwe@qwe.pl");
-        customer2 = new Customer("qwe", "qwe@qwe.pl");
+        customer1 = new Customer("qwe", "e@mail.com");
+        customer2 = new Customer("qwe", "e@mail.com");
     }
 
     @Test
+    @Ignore
     public void assertEqualsVsAssertSameOnObject() throws Exception {
         assertNotSame(customer1, customer2);
         assertEquals(customer1, customer2);
@@ -29,4 +33,10 @@ public class EqualsVsSameTest {
         assertEquals("qwe", "qwe");
     }
 
+    @Test
+    public void customAssertion() {
+        Student student1 = new Student(1, "test");
+        Student student2 = new Student(1, "test2");
+        assertDifferent(student1, student2);
+    }
 }

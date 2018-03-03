@@ -14,13 +14,13 @@
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <artifactId>testBase</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
-            <artifactId>testBase</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <artifactId>junit</artifactId>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
@@ -35,7 +35,7 @@
                     <forkCount>2</forkCount>
                     <reuseForks>true</reuseForks>
                     <systemPropertyVariables>
-                        <specificTestsEnabled>${enableSpecificTests}</specificTestsEnabled>
+                        <h2TestsEnabled>${enableH2Tests}</h2TestsEnabled>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -43,7 +43,7 @@
     </build>
     <profiles>
         <profile>
-            <id>enable-specific-tests</id>
+            <id>enable-h2-tests</id>
             <properties>
                 <enableSpecificTests>true</enableSpecificTests>
             </properties>
