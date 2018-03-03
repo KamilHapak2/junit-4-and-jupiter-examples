@@ -35,7 +35,7 @@
                     <forkCount>2</forkCount>
                     <reuseForks>true</reuseForks>
                     <systemPropertyVariables>
-                        <h2TestsEnabled>${enableH2Tests}</h2TestsEnabled>
+                        <h2TestsEnabled>${h2TestsEnabled}</h2TestsEnabled>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -43,9 +43,9 @@
     </build>
     <profiles>
         <profile>
-            <id>enable-h2-tests</id>
+            <id>h2TestsEnabled</id>
             <properties>
-                <enableSpecificTests>true</enableSpecificTests>
+                <h2TestsEnabled>true</h2TestsEnabled>
             </properties>
         </profile>
 
