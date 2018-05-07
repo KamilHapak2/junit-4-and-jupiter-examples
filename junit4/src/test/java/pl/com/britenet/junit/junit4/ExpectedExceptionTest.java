@@ -5,9 +5,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import pl.com.britenet.junit.testbase.Customer;
 import pl.com.britenet.junit.testbase.CustomerService;
-import pl.com.britenet.junit.testbase.MyBusinessException;
-
-import static org.junit.Assert.assertTrue;
 
 public class ExpectedExceptionTest {
 
@@ -19,8 +16,6 @@ public class ExpectedExceptionTest {
         Customer customer = new Customer("name");
 
         CustomerService.someMethod(customer);
-
-        assertTrue(true);
     }
 
     @Test

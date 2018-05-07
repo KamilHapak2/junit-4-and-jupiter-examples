@@ -13,10 +13,26 @@
         <module>junit5</module>
         <module>testBase</module>
     </modules>
-
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>bintray</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.github.geowarin</groupId>
+                <artifactId>docker-junit-rule</artifactId>
+                <version>1.1.0</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>

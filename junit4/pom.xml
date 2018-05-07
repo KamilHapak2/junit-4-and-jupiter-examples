@@ -32,9 +32,9 @@
                 <version>2.19</version>
                 <configuration>
                     <forkCount>2</forkCount>
-                    <reuseForks>true</reuseForks>
                     <systemPropertyVariables>
                         <h2TestsEnabled>${h2TestsEnabled}</h2TestsEnabled>
+                        <timeConsumingTestsEnabled>${timeConsumingTestsEnabled}</timeConsumingTestsEnabled>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -45,6 +45,12 @@
             <id>h2-tests-enabled</id>
             <properties>
                 <h2TestsEnabled>true</h2TestsEnabled>
+            </properties>
+        </profile>
+        <profile>
+            <id>time-consuming-tests-enabled</id>
+            <properties>
+                <timeConsumingTestsEnabled>true</timeConsumingTestsEnabled>
             </properties>
         </profile>
     </profiles>

@@ -1,7 +1,6 @@
 package pl.com.britenet.junit.junit4;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import pl.com.britenet.junit.testbase.Customer;
 import pl.com.britenet.junit.testbase.Student;
@@ -20,9 +19,11 @@ public class EqualsVsSameTest {
         customer2 = new Customer("qwe", "e@mail.com");
     }
 
+    /**
+     * Remove hashCode and equals methos from Customer to see the difference.
+     */
     @Test
-    @Ignore
-    public void assertEqualsVsAssertSameOnObject() throws Exception {
+    public void assertEqualsVsAssertSameOnObject() {
         assertNotSame(customer1, customer2);
         assertEquals(customer1, customer2);
     }
