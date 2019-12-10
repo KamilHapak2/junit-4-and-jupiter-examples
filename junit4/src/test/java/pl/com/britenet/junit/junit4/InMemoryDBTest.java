@@ -3,6 +3,8 @@ package pl.com.britenet.junit.junit4;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
@@ -12,7 +14,6 @@ import pl.com.britenet.junit.testbase.JpaConfig;
 import pl.com.britenet.junit.testbase.Student;
 import pl.com.britenet.junit.testbase.StudentRepository;
 
-import javax.annotation.Resource;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assume.assumeTrue;
@@ -24,7 +25,7 @@ import static org.junit.Assume.assumeTrue;
 @Transactional
 public class InMemoryDBTest {
 
-    @Resource
+    @Autowired
     private StudentRepository studentRepository;
 
     @Before
@@ -37,7 +38,7 @@ public class InMemoryDBTest {
         Student student = new Student(1, "john");
         studentRepository.save(student);
 
-        Student student2 = studentRepository.findOne(1L);
+        Student student2 = studentRepository.findOne( Example.of(new Student("john"))).get();
         assertEquals("john", student2.getName());
     }
 }

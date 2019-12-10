@@ -10,7 +10,7 @@ public class AnotherTimeConsumingTest {
 
     @Before
     public void init(){
-        assumeTrue(ConfigurationService.isisTimeConsumingTestsEnabled());
+        assumeTrue(ConfigurationService.isTimeConsumingTestsEnabled());
     }
 
     @Test

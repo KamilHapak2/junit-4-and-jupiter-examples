@@ -6,7 +6,7 @@ public class ConfigurationService {
         return Boolean.valueOf(System.getProperty("h2TestsEnabled"));
     }
 
-    public static boolean isisTimeConsumingTestsEnabled() {
+    public static boolean isTimeConsumingTestsEnabled() {
         return Boolean.valueOf(System.getProperty("timeConsumingTestsEnabled"));
     }
 }
