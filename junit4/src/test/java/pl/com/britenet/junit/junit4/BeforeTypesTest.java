@@ -1,33 +1,32 @@
 package pl.com.britenet.junit.junit4;
 
+import lombok.extern.java.Log;
 import org.junit.*;
 
-import java.util.logging.Logger;
-
+@Log
 public class BeforeTypesTest {
 
-    private static Logger LOG = Logger.getLogger("BeforeTypes");
 
     @AfterClass
     public static void afterClass() {
-        LOG.info("AFTER CLASS");
+        log.info("AFTER CLASS");
     }
 
     @BeforeClass
     public static void beforeClass() {
-        LOG.info("BEFORE CLASS");
+        log.info("BEFORE CLASS");
     }
 
     @After
     @Before
     public void before() {
-        LOG.info("BEFORE AND AFTER");
+        log.info("BEFORE AND AFTER");
     }
 
     @Test
     @Before
     public void test1() {
-        LOG.info("BEFORE ON TEST");
+        log.info("BEFORE ON TEST");
 
     }
 
@@ -38,7 +37,7 @@ public class BeforeTypesTest {
 
     @Before
     public void test3() {
-        LOG.info("SECOND BEFORE ");
+        log.info("SECOND BEFORE ");
     }
 }
 

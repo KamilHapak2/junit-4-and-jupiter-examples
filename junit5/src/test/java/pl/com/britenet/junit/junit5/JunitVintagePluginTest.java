@@ -3,7 +3,7 @@ package pl.com.britenet.junit.junit5;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Junit4Test {
+public class JunitVintagePluginTest {
 
     @Before
     public void init() {

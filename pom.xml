@@ -13,19 +13,14 @@
         <module>junit5</module>
         <module>testBase</module>
     </modules>
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <name>bintray</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -43,26 +38,6 @@
                 <artifactId>junit-vintage-engine</artifactId>
                 <version>${junit-jupiter.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>4.3.7.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-jpa</artifactId>
-                <version>2.1.10.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>1.4.194</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-entitymanager</artifactId>
-                <version>${hibernate-entitymanager.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <properties>
@@ -72,6 +47,7 @@
 
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <junit-4.version>4.12</junit-4.version>
+        <lombok.version>1.18.10</lombok.version>
     </properties>
 
 </project>
