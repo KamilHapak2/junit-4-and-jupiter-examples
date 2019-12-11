@@ -39,11 +39,6 @@
             <artifactId>junit-vintage-engine</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.github.geowarin</groupId>
-            <artifactId>docker-junit-rule</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
 
