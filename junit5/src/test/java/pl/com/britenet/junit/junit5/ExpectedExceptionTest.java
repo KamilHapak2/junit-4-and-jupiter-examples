@@ -14,5 +14,4 @@ class ExpectedExceptionTest {
             CustomerService.someMethod(new Customer("name", " asd"));
         });
     }
-
 }
