@@ -11,7 +11,7 @@ public class JunitVintagePluginTest {
     }
 
     @Test
-    public void name() throws Exception {
+    public void name() {
 
     }
 }
