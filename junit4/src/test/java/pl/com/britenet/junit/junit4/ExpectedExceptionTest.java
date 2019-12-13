@@ -1,5 +1,6 @@
 package pl.com.britenet.junit.junit4;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -8,22 +9,34 @@ import pl.com.britenet.junit.testbase.CustomerService;
 
 public class ExpectedExceptionTest {
 
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
+  private CustomerService customerService;
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void expectedTest() throws Exception {
-        Customer customer = new Customer("name");
+  @Before
+  public void setUp() {
+    customerService = new CustomerService();
+  }
 
-        CustomerService.someMethod(customer);
-    }
+  @Test(expected = UnsupportedOperationException.class)
+  public void expectedTest() {
 
-    @Test
-    public void expectedExceptionRuleTest() throws Exception {
-        Customer customer = new Customer("name", "asd");
+    // given
+    Customer customer = new Customer("name");
 
-        thrown.expect(UnsupportedOperationException.class);
+    // when
+    customerService.someMethod(customer);
+  }
 
-        CustomerService.someMethod(customer);
-    }
+  @Test
+  public void expectedExceptionRuleTest() {
+
+    // given
+    Customer customer = new Customer("name", "asd");
+
+    // then
+    thrown.expect(UnsupportedOperationException.class);
+
+    // when
+    customerService.someMethod(customer);
+  }
 }
