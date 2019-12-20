@@ -5,13 +5,9 @@ import org.junit.Test;
 
 public class JunitVintagePluginTest {
 
-    @Before
-    public void init() {
+  @Before
+  public void init() {}
 
-    }
-
-    @Test
-    public void name() {
-
-    }
+  @Test
+  public void name() {}
 }
