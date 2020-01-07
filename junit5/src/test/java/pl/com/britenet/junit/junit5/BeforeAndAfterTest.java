@@ -3,6 +3,7 @@ package pl.com.britenet.junit.junit5;
 import lombok.extern.java.Log;
 import org.junit.jupiter.api.*;
 
+/** JUnit Jupiter examples of before/after test/class annotations and its behaviours. */
 @Log
 class BeforeAndAfterTest {
 

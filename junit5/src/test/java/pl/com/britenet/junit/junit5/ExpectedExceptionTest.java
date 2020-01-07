@@ -8,6 +8,7 @@ import pl.com.britenet.junit.testbase.CustomerService;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/** Examples of assertions used for exceptions. */
 class ExpectedExceptionTest {
 
   private CustomerService customerService;
