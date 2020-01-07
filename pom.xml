@@ -44,10 +44,8 @@
         <hibernate-entitymanager.version>5.2.9.Final</hibernate-entitymanager.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <junit-4.version>4.12</junit-4.version>
         <lombok.version>1.18.10</lombok.version>
     </properties>
-
 </project>
