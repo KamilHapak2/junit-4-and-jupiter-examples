@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
  * typing "slow | integration" it will run only tests with one of those tags.
  */
 @Log
-public class TaggingTest {
+class TaggingTest {
 
   @Test
   @Tag("integration")
